@@ -347,35 +347,110 @@
 // // console.log(arrtoll([1,2,3,4]))
 // ll.revprint()
 
+// class Node{
+//     constructor(data,next = null){
+//         this.data = data
+//         this.next = next
+//     }
+// }
+// class LinkedList{
+//     constructor(){
+//         this.head = null 
+//         this.size = 0
+//     }
+//     insert(data){
+//         this.head = new Node(data , this.head)
+//         this.size++
+//     }
+//     lastIns(data){
+//         let current = this.head
+//         let prev
+//         let node = new Node(data)
+//         if(!this.head){
+//             this.head = new Node(data , this.head)
+//         }else{
+//             while(current){
+                
+//                 current = current.next
+//             }
+//             current.next = node 
+            
+//         }
+//     }
+//     print(){
+//         let current = this.head
+//         while(current){
+//             console.log(current.data);
+//             current = current.next
+            
+//         }
+//     }
+//     rev(node = this.head){
+//         if(node === null) return 
+//         this.rev(node.next)
+//         console.log(node.data);
+         
+//     }
+//     insAt(ind , data){
+//         let node = new Node(data)
+//         let current = this.head
+//         let prev
+//         let count =0
+//         if(ind === 0){
+//             this.head = new Node(data , this.head)
+//             return
+//         }
+//         while(count < ind){
+//             count++
+//             prev = current
+//             current = current.next 
+//         }
+//         node.next = current
+//         prev.next = node 
+//         this.size++
+//     }
+//     deleteat(ind){
+//         let current = this.head
+//         let prev
+//         let count =0
+//         if(ind ===0){
+//             this.head = current.next
+//             return
+//         }else{
+//             while(count<ind){
+//                 count++
+//                 prev = current
+//                 current  = current.next 
+//             }
+//             prev.next = current.next
+//             this.size--
+//         }
+//     }
+// }
+
+// let ll = new LinkedList()
+// ll.insert(199)
+// ll.insert(299)
+// ll.insAt(0,400)
+// // ll.print()
+// ll.deleteat(2)
+// ll.rev()
+
+
 class Node{
     constructor(data,next = null){
-        this.data = data
-        this.next = next
+        this.data = data 
+        this.next = next 
     }
 }
-class LinkedList{
+
+class LL{
     constructor(){
-        this.head = null 
+        this.head = null
         this.size = 0
     }
     insert(data){
-        this.head = new Node(data , this.head)
-        this.size++
-    }
-    lastIns(data){
-        let current = this.head
-        let prev
-        let node = new Node(data)
-        if(!this.head){
-            this.head = new Node(data , this.head)
-        }else{
-            while(current){
-                
-                current = current.next
-            }
-            current.next = node 
-            
-        }
+        this.head = new Node(data,this.head)
     }
     print(){
         let current = this.head
@@ -385,54 +460,39 @@ class LinkedList{
             
         }
     }
-    rev(node = this.head){
-        if(node === null) return 
-        this.rev(node.next)
-        console.log(node.data);
-         
-    }
-    insAt(ind , data){
+    insertAt(index,data){
         let node = new Node(data)
-        let current = this.head
-        let prev
-        let count =0
-        if(ind === 0){
-            this.head = new Node(data , this.head)
-            return
-        }
-        while(count < ind){
-            count++
+        let current = this.head 
+        let prev 
+        let count = 0
+        while(count < index){
             prev = current
-            current = current.next 
+            current = current.next
+            count++
         }
         node.next = current
         prev.next = node 
         this.size++
     }
-    deleteat(ind){
+    deleteAt(index){
         let current = this.head
         let prev
-        let count =0
-        if(ind ===0){
-            this.head = current.next
-            return
-        }else{
-            while(count<ind){
-                count++
-                prev = current
-                current  = current.next 
-            }
-            prev.next = current.next
-            this.size--
+        let count = 0
+        while(count < index){
+            count++
+            prev = current 
+            current = current.next 
         }
+        prev.next = current.next
+        this.size--
+
     }
 }
 
-let ll = new LinkedList()
-ll.insert(199)
-ll.insert(299)
-ll.insAt(0,400)
-// ll.print()
-ll.deleteat(2)
-ll.rev()
 
+const ll = new LL()
+ll.insert(100)
+ll.insert(200)
+ll.insertAt(2,300)
+ll.deleteAt(1)
+ll.print()
