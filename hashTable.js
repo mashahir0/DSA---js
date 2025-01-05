@@ -90,7 +90,7 @@ class HashTable{
             }
         }
         this.bucket[index].push([key,value])
-        
+                            
     }
     get(key){
         let index = this.hash(key)
