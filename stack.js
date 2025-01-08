@@ -34,43 +34,45 @@ class Stack{
 // stach using linked list 
 
 
-class Node {
-    constructor(data,next = null){
-        this.data = data
-        this.next = next
-    }
-}
-class items{
-    constructor(){
-        this.top = null
-        this.size = 0
-    }
-    push(value){
-        this.top = new Node(value, this.top)
-        this.size++
-    }
-    pop(){
-        if(this.isEmpty()) return 'empty'
-        let val = this.top.data
-        this.top = this.top.next
-        return val
-    }
-    peak(){
-        return this.top.data
-    }
-    isEmpty(){
-        return this.size ===0
-    }
-}
+// class Node {
+//     constructor(data,next = null){
+//         this.data = data
+//         this.next = next
+//     }
+// }
+// class items{
+//     constructor(){
+//         this.top = null
+//         this.size = 0
+//     }
+//     push(value){
+//         this.top = new Node(value, this.top)
+//         this.size++
+//     }
+//     pop(){
+//         if(this.isEmpty()) return 'empty'
+//         let val = this.top.data
+//         this.top = this.top.next
+//         return val
+//     }
+//     peak(){
+//         return this.top.data
+//     }
+//     isEmpty(){
+//         return this.size ===0
+//     }
+// }
 
-const stack = new items()
-stack.push(10)
-stack.push(20)
-stack.push(30)
-console.log(`item removed : ${stack.pop()}`);
+// const stack = new items()
+// stack.push(10)
+// stack.push(20)
+// stack.push(30)
+// console.log(`item removed : ${stack.pop()}`);
 
 
-console.log(stack.peak());
+// console.log(stack.peak());
+
+
 
 
 
